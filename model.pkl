@@ -1,0 +1,3 @@
+model_type: linear_regression
+slope: -0.05
+intercept: 2

@@ -1,0 +1,33 @@
+{
+  "name": "data-analysis-platform",
+  "version": "1.0.0",
+  "description": "Data Analysis Platform with Command Line Interface",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "cd src && npm start",
+    "build": "cd src && npm run build",
+    "install-client": "cd src && npm install",
+    "install-all": "npm install && npm run install-client"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.12"
+  },
+  "keywords": [
+    "data-analysis",
+    "machine-learning",
+    "visualization",
+    "cli"
+  ],
+  "author": "",
+  "license": "ISC"
+}

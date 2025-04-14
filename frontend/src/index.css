@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  body {
+    @apply m-0 font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre {
+    @apply font-mono;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+}
+
+/* Custom components */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200 
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 
+           focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-700 hover:bg-gray-300 
+           dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 
+           focus:ring-gray-500;
+  }
+
+  .input {
+    @apply px-4 py-2 rounded-lg border border-gray-300 
+           focus:border-primary-500 focus:ring-1 focus:ring-primary-500 
+           focus:outline-none transition duration-200
+           dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-500;
+}
+
+/* Animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+/* Console Styles */
+.console-output {
+  @apply font-mono text-sm;
+}
+
+.console-output .command {
+  @apply text-green-500 dark:text-green-400;
+}
+
+.console-output .error {
+  @apply text-red-500 dark:text-red-400;
+}
+
+.console-output .info {
+  @apply text-blue-500 dark:text-blue-400;
+}
+
+.console-output .success {
+  @apply text-green-600 dark:text-green-500;
+}
+
+/* Toast Customization */
+.Toastify__toast {
+  @apply rounded-lg shadow-lg;
+}
+
+.Toastify__toast--success {
+  @apply bg-green-500 dark:bg-green-600;
+}
+
+.Toastify__toast--error {
+  @apply bg-red-500 dark:bg-red-600;
+}
+
+.Toastify__toast--info {
+  @apply bg-blue-500 dark:bg-blue-600;
+}
+
+.Toastify__toast--warning {
+  @apply bg-yellow-500 dark:bg-yellow-600;
+}
+
+/* Chart Styles */
+.chart-container {
+  @apply p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm;
+}
+
+.chart-title {
+  @apply text-lg font-semibold text-gray-800 dark:text-white mb-4;
+}
+
+/* Data Grid Styles */
+.data-grid {
+  @apply w-full border-collapse;
+}
+
+.data-grid th {
+  @apply px-4 py-2 bg-gray-100 dark:bg-gray-700 
+         text-left text-gray-700 dark:text-gray-200 
+         font-semibold border-b border-gray-200 dark:border-gray-600;
+}
+
+.data-grid td {
+  @apply px-4 py-2 border-b border-gray-200 dark:border-gray-700 
+         text-gray-600 dark:text-gray-300;
+}
+
+.data-grid tr:hover {
+  @apply bg-gray-50 dark:bg-gray-750;
+}
+
+/* Module Navigation */
+.module-nav-item {
+  @apply flex items-center px-4 py-2 text-gray-600 dark:text-gray-300 
+         rounded-lg transition-colors duration-200 hover:bg-gray-100 
+         dark:hover:bg-gray-700 cursor-pointer;
+}
+
+.module-nav-item.active {
+  @apply bg-primary-100 dark:bg-primary-900 text-primary-700 
+         dark:text-primary-100;
+}
+
+/* Loading States */
+.loading-overlay {
+  @apply absolute inset-0 bg-white bg-opacity-75 dark:bg-gray-900 
+         dark:bg-opacity-75 flex items-center justify-center z-50;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-4 border-gray-300 
+         dark:border-gray-600 border-t-primary-600;
+}
+
+/* Responsive Design Helpers */
+@media (max-width: 640px) {
+  .hide-on-mobile {
+    @apply hidden;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hide-on-tablet {
+    @apply hidden;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hide-on-desktop {
+    @apply hidden;
+  }
+}
